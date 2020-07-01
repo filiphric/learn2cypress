@@ -1,0 +1,4 @@
+it('otvorenie aplikácie', () => {
+
+  
+});
