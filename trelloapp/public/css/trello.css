@@ -1,5 +1,5 @@
 @import '../../assets/css/normalize.css';
-.transition, .Star:hover path, .Star, .Collection .Collection_item:hover .Star, .CreateList-active, .CreateList {
+.transition, .Star:hover path, .Star, .Collection .Collection_item:hover .Star, .TaskModule .dz-drag-hover .dz-message p, .TaskModule .dz-drag-hover .dz-message, .TaskModule .dz-drag-hover svg, .CreateList-active, .CreateList {
   transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -webkit-transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -moz-transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
@@ -127,6 +127,13 @@ nav.Nav .Nav_button {
 }
 nav.Nav .Nav_button:hover {
   background-color: #5BA4CF;
+}
+nav.Nav .Nav_button svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFF;
+  vertical-align: bottom;
+  margin-bottom: -2px;
 }
 
 .Background {
@@ -364,11 +371,12 @@ nav.Nav .Nav_button:hover {
 .TaskModule {
   background-color: #E2E4E6;
   border-radius: 3px;
-  height: 375px;
+  min-height: 375px;
   width: 330px;
   z-index: 2000;
   margin: 4% 0;
   padding: 0;
+  overflow: hidden;
 }
 .TaskModule .TaskModule_exit {
   width: 100%;
@@ -423,6 +431,170 @@ nav.Nav .Nav_button:hover {
   align-items: center;
   justify-content: flex-start;
   margin: 0 auto;
+}
+.TaskModule .dz-message {
+  position: relative;
+  width: 265px;
+  height: 100px;
+  border: 4px dashed #cdd2d4;
+  margin: 0 auto;
+}
+.TaskModule .dz-message svg {
+  display: block;
+  margin: auto;
+  padding-top: 8px;
+  fill: #B6BBBF;
+}
+.TaskModule .dz-message p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #959DA1;
+  text-align: center;
+}
+.TaskModule .vue-dropzone {
+  padding-bottom: 30px;
+  padding-top: 8px;
+}
+.TaskModule .dz-drag-hover svg {
+  fill: #838C91;
+}
+.TaskModule .dz-drag-hover .dz-message {
+  border-color: #838C91;
+}
+.TaskModule .dz-drag-hover .dz-message p {
+  color: #838C91;
+}
+.TaskModule .imagePreview {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.TaskModule .imagePreview img {
+  max-height: 400px;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 14px;
+  padding-top: 8px;
+}
+.TaskModule .imagePreview .Cancel {
+  position: absolute;
+  right: 20.7px;
+  top: 15px;
+  margin: 0;
+}
+.TaskModule .dz-preview {
+  display: none;
+}
+
+.Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.LoginModule {
+  background-color: #E2E4E6;
+  border-radius: 3px;
+  min-height: 310px;
+  width: 350px;
+  z-index: 2000;
+  margin: 4% 0;
+  padding: 0;
+  overflow: hidden;
+}
+.LoginModule .LoginModule_exit {
+  width: 100%;
+  display: block;
+  position: relative;
+  height: 35px;
+}
+.LoginModule .LoginModule_exit .Cancel {
+  position: absolute;
+  right: 14.7px;
+  top: 15px;
+  margin: 0;
+}
+.LoginModule .LoginModule_title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #4d4d4d;
+  margin: 0 auto 1px auto;
+  text-align: center;
+}
+.LoginModule .LoginModule_description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #959DA1;
+  width: 88%;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+.LoginModule .LoginModule_logSignSwitch {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #838C91;
+  width: 88%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+.LoginModule .LoginModule_logSignSwitch a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #838C91;
+  text-decoration: underline;
+}
+.LoginModule .LoginModule_buttons button {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.LoginModule .credentials input {
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 250px;
+  display: block;
+}
+.LoginModule .credentials .welcomeEmail {
+  display: block;
+  text-align: center;
+}
+.LoginModule .credentials .welcomeEmail .checkbox {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #959DA1;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 25px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.LoginModule .credentials .welcomeEmail .checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .Collection {

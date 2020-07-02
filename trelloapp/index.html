@@ -103,7 +103,38 @@
 							<line x1="0" y1="0" x2="15" y2="15"/>
 							<line x1="0" y1="15" x2="15" y2="0"/>
 						</svg>
-					</div>
+          </div>
+          
+          <div v-show="currentTask.image">
+            <h6 class="TaskModule_descriptionTitle">Image</h6>
+            <div class="imagePreview">
+                <svg
+                  class="Cancel"
+                  v-on:click="removeImage()"
+                >
+                <line x1="0" y1="0" x2="15" y2="15"/>
+                <line x1="0" y1="15" x2="15" y2="0"/>
+              <img :src="currentTask.image">
+            </div>
+          </div>
+          <div v-show="!currentTask.image">
+            <h6 class="TaskModule_descriptionTitle" v-show="!currentTask.image">Upload image</h6>
+            <vue-dropzone 
+            ref="myVueDropzone" 
+            v-show="!currentTask.image" 
+            :id="'dropzone' + currentTask.id" 
+            :options="dropzoneOptions" 
+            :destroyDropzone=true
+            :use-custom-slot=true
+            @vdropzone-sending="addImageId" 
+            @vdropzone-success="fileUploaded"
+            >
+              <div class="dropzone-custom-content">
+                <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h7a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21ZM22.71,4.29l-3-3a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-3,3a1,1,0,0,0,1.42,1.42L18,4.41V10a1,1,0,0,0,2,0V4.41l1.29,1.3a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,4.29Z"/></svg>
+                <p>Drop file here or click to upload</p>
+              </div>
+            </vue-dropzone>
+          </div>
 				</div>
 			</div>
 
@@ -231,12 +262,63 @@
 <body>
 	<div id="trello-app">
 		<nav class="Nav">
-      <router-link tag="div" class="Nav_boards Nav_button" to="/">
-        Boards
+      <router-link tag="div" class="Nav_boards Nav_button" to="/" v-show="$route.path !== '/'">
+        My Boards
       </router-link>
-			<img class="Nav_logo" src="./public/images/logo.png">
-			<div class="Nav_user Nav_button">Login</div>
-		</nav>
+			<img class="Nav_logo" src="./public/images/trello-logo.png">
+			<div class="Nav_user Nav_button" @click="openLogin()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" data-name="Layer 1" viewBox="0 0 24 24"><path d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/></svg>
+        Log in</div>
+    </nav>
+    <div
+				class="Overlay"
+				v-on:click.self="closeLogin()"
+				v-show="showLoginModule"
+			>
+				<div class="LoginModule">
+					<div class="LoginModule_exit">
+						<svg
+							class="Cancel"
+							v-on:click="closeLogin()"
+						>
+							<line x1="0" y1="0" x2="15" y2="15"/>
+							<line x1="0" y1="15" x2="15" y2="0"/>
+						</svg>
+					</div>
+          <div v-show="loginCardActive">
+            <h2 class="LoginModule_title">Log in to your account</h2>
+              <div class="credentials">
+                <p class="LoginModule_description">Enter your email and password to log in</p>
+                <input type="email" placeholder="Email address">          
+                <input type="password" placeholder="Password">    
+                <div class="LoginModule_buttons">
+                  <button class="Button">
+                    Log in</button>
+                </div>      
+              </div>
+              <p class="LoginModule_logSignSwitch">Don’t have an account? <a href="#" @click="logSignSwitch">Sign up here</a></p>
+          </div>
+          <div v-show="signupCardActive">
+            <h2 class="LoginModule_title">Sign up to create a free account</h2>
+              <div class="credentials">
+                <p class="LoginModule_description">Enter your email and password to sign up</p>
+                <input type="email" placeholder="Email address">          
+                <input type="password" placeholder="Password"> 
+                <div class="welcomeEmail">
+                  <label class="checkbox">
+                    <input type="checkbox" value="sendEmails">
+                    Send me a welcome email
+                  </label>    
+                </div>
+                <div class="LoginModule_buttons">
+                  <button class="Button">
+                    Sign up</button>
+                </div>      
+              </div>
+              <p class="LoginModule_logSignSwitch">Already have an account? <a href="#" @click="logSignSwitch">Go to log in</a></p>
+          </div>
+        </div>
+    </div>
 		<router-view :key="$route.fullPath"></router-view>
 	</div>
 

@@ -2,7 +2,7 @@ Vue = require('vue');
 VueRouter = require('vue-router');
 Vue.use(VueRouter);
 
-require('vuedraggable')
+require('vuedraggable');
 require('./../directives/vue-focus.js');
 require('./../components/collection.js');
 require('./../components/board.js');
@@ -18,5 +18,27 @@ var router = new VueRouter({
 })
 
 new Vue({
+  data: function() {
+		return {
+      showLoginModule: false,
+      loginCardActive: false,
+      signupCardActive: false
+    }
+  },
+  methods: {
+    openLogin: function() {
+			this.showLoginModule = true;
+			this.loginCardActive = true;
+    },
+    closeLogin: function() {
+			this.showLoginModule = false;
+			this.loginCardActive = false;
+			this.signupCardActive = false;
+    },
+    logSignSwitch: function() {
+			this.signupCardActive = !this.signupCardActive;
+			this.loginCardActive = !this.loginCardActive;
+    }
+  },
   router
 }).$mount('#trello-app')
