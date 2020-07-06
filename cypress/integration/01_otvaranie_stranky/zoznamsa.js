@@ -9,5 +9,7 @@ it('otvorenie trello boardu', () => {
   alebo trello board z úlohy #2
   
   */
+
+ cy.visit('/');
   
 });
