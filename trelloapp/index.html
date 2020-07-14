@@ -247,7 +247,7 @@
 							L212.404,178.509z"/>
 					</svg>
 				</router-link>
-				<div class="Collection_newItem" v-bind:class="{ 'Collection_newItem-active': newBoardInputActive }" v-on:click="toggleNewBoardInput(true)" >
+				<div class="Collection_newItem" id="new-board" data-cy="create-board" v-bind:class="{ 'Collection_newItem-active': newBoardInputActive }" v-on:click="toggleNewBoardInput(true)" >
 					<h1 class="Collection_title" v-show="!newBoardInputActive">Create a board...</h1>
 					<input class="Collection_addBoard" v-model="newBoardTitle" v-on:keyup.enter.prevent="createNewBoard()" placeholder="Create a board..." v-show="newBoardInputActive" v-focus="newBoardInputActive" ></input>
 					<div class="Collection_options" v-show="newBoardInputActive">

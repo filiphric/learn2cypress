@@ -10,6 +10,4 @@ it('otvorenie trello boardu', () => {
   
   */
 
- cy.visit('/');
-  
 });
