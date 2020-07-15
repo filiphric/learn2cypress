@@ -9,4 +9,12 @@ beforeEach( () => {
 
 it('over vsetky zaskrtnute tasky', () => {
 
+  cy
+    .get('.Task label').should( checkboxes => {
+
+      expect(checkboxes[0]).to.have.class('completed')
+      expect(checkboxes[1]).to.not.have.class('completed')
+
+    })
+
 })

@@ -31,7 +31,7 @@ it('overenie textov vsetkych taskov', () => {
   
 });
 
-it('task s textom „chlieb“ je na poslednej pozicii (riesenie 1)', () => {
+it('task s textom „syr“ je na poslednej pozicii (riesenie 1)', () => {
 
   cy
     .get('.Task')
