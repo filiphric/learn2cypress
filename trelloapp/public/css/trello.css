@@ -1,5 +1,5 @@
 @import '../../assets/css/normalize.css';
-.transition, .Star:hover path, .Star, .Collection .Collection_item:hover .Star, .TaskModule .dz-drag-hover .dz-message p, .TaskModule .dz-drag-hover .dz-message, .TaskModule .dz-drag-hover svg, .CreateList-active, .CreateList {
+.transition, .Star:hover path, .Star, .board .board_item:hover .Star, .TaskModule .dz-drag-hover .dz-message p, .TaskModule .dz-drag-hover .dz-message, .TaskModule .dz-drag-hover svg, .CreateList-active, .CreateList {
   transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -webkit-transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
   -moz-transition: all 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
@@ -125,9 +125,6 @@ nav.Nav .Nav_button {
   border-radius: 3px;
   cursor: pointer;
 }
-nav.Nav .Nav_button:hover {
-  background-color: #5BA4CF;
-}
 nav.Nav .Nav_button svg {
   width: 20px;
   height: 20px;
@@ -135,23 +132,69 @@ nav.Nav .Nav_button svg {
   vertical-align: bottom;
   margin-bottom: -2px;
 }
+nav.Nav .Nav_button .Nav_button {
+  position: relative;
+  display: block;
+  float: right;
+}
+nav.Nav .Nav_button:hover {
+  background-color: #5BA4CF;
+}
+nav.Nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #298FCA;
+  min-width: 110px;
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  margin-left: 17px;
+  margin-top: 10px;
+}
+nav.Nav .dropdown-content span {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #FFFFFF;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+nav.Nav .dropdown-content span:hover {
+  background-color: #5BA4CF;
+}
+nav.Nav .show {
+  display: block;
+}
+nav.Nav .invisible-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
 
-.Background {
+.background {
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
 }
-.Background .Background_spacer {
+.background .background_spacer {
   width: 100vw;
   height: 55px;
 }
-.Background .Background_container {
+.background .background_container {
   margin: 10px auto;
   width: 90%;
   max-width: 1300px;
 }
-.Background .Background_title {
+.background .background_title {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -159,11 +202,11 @@ nav.Nav .Nav_button svg {
   margin: 10px 0;
 }
 
-.Background-white {
+.background-white {
   background-color: #FFFFFF;
 }
 
-.Background-blue {
+.background-blue {
   background-color: #0079BF;
 }
 
@@ -175,14 +218,71 @@ nav.Nav .Nav_button svg {
   transform: translate(-50%, -50%);
 }
 
-.Background-white .loading {
+.background-white .loading {
   color: #000;
 }
 
-.Background-blue .loading {
+.background-blue .loading {
   color: #fff;
 }
 
+#errorMessage {
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #f85252;
+  top: -56px;
+  height: 30px;
+  padding: 16px 0 9px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+  left: 0;
+  line-height: 1.4em;
+  font-size: 18px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  z-index: 101;
+  animation-name: slideDown;
+  animation-duration: 4s;
+}
+
+@-webkit-keyframes slideDown {
+  10%, 90% {
+    -webkit-transform: translateY(56px);
+  }
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+@-moz-keyframes slideDown {
+  10%, 90% {
+    -moz-transform: translateY(56px);
+  }
+  0%, 100% {
+    -moz-transform: translateY(0px);
+  }
+}
+@-webkit-keyframes slideUp {
+  0%, 100% {
+    -webkit-transform: translateY(56px);
+  }
+  10%, 90% {
+    -webkit-transform: translateY(0px);
+  }
+}
+@-moz-keyframes slideUp {
+  0%, 100% {
+    -moz-transform: translateY(56px);
+  }
+  10%, 90% {
+    -moz-transform: translateY(0px);
+  }
+}
 .Task {
   display: flex;
   justify-content: flex-start;
@@ -202,11 +302,19 @@ nav.Nav .Nav_button svg {
   font-weight: 400;
   font-size: 12px;
   color: #4d4d4d;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
 }
 .Task:hover {
   background-color: #F8F9F9;
 }
 .Task .Task_title {
+  display: block;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -216,6 +324,77 @@ nav.Nav .Nav_button svg {
   font-size: 12px;
   color: #4d4d4d;
   white-space: normal;
+}
+.Task .Task_title.completed {
+  text-decoration: line-through;
+}
+.Task .container {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.Task .container input {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+.Task .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+}
+.Task .container:hover input.checkmark {
+  background-color: #ccc;
+}
+.Task .container input:checked.checkmark {
+  background-color: #0079BF;
+}
+.Task .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.Task .container input:checked.checkmark:after {
+  display: block;
+}
+.Task .container .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.Task :focus {
+  outline: 0;
+}
+
+.overDue {
+  background-color: #E7748D;
+}
+.overDue .Task_title {
+  color: #fff;
+}
+.overDue:hover {
+  background-color: #E15170;
 }
 
 .ListContainer {
@@ -245,11 +424,77 @@ nav.Nav .Nav_button svg {
   margin: 0.5% 1.5%;
   vertical-align: top;
 }
+.List .taskTitle {
+  width: 212px;
+  min-height: 18px;
+  display: inline-block;
+  margin: 0 auto 7px 17px;
+  background-color: #E2E4E6;
+  border-radius: 3px;
+  color: #4d4d4d;
+  outline: none;
+  border: none;
+}
+.List .taskTitle:focus {
+  background-color: #FFFFFF;
+}
+.List .options {
+  fill: #959DA1;
+  width: 21px;
+  height: 21px;
+  margin: 5px 8px 0 0;
+  cursor: pointer;
+}
+.List .dropdown {
+  position: relative;
+  display: block;
+  float: right;
+}
+.List .invisible-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+.List .dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  margin-left: -75px;
+}
+.List .dropdown-content span {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4d4d4d;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.List .dropdown-content span:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.List .dropdown-content span.delete {
+  color: #FF220C;
+}
+.List .show {
+  display: block;
+}
 .List .List_tasks {
   max-height: 70vh;
   overflow-y: scroll;
   margin: 0;
   padding: 0;
+  min-height: 2px;
 }
 .List .List_addTask {
   width: 88%;
@@ -334,8 +579,7 @@ nav.Nav .Nav_button svg {
   width: 88%;
   padding: 5px;
   min-height: 18px;
-  display: block;
-  margin: 0 auto;
+  margin: 0 2px 7px 9px;
   background-color: #E2E4E6;
   border-radius: 3px;
   color: #4d4d4d;
@@ -377,6 +621,10 @@ nav.Nav .Nav_button svg {
   margin: 4% 0;
   padding: 0;
   overflow: hidden;
+  /* Removes the clear button from date inputs */
+  /* Removes the spin button */
+  /* Always display the drop down caret */
+  /* A few custom styles for date inputs */
 }
 .TaskModule .TaskModule_exit {
   width: 100%;
@@ -386,9 +634,61 @@ nav.Nav .Nav_button svg {
 }
 .TaskModule .TaskModule_exit .Cancel {
   position: absolute;
-  right: 14.7px;
+  right: 38.7px;
   top: 10px;
   margin: 0;
+}
+.TaskModule .TaskModule_exit .options {
+  fill: #959DA1;
+  width: 21px;
+  height: 21px;
+  margin: 8px;
+  cursor: pointer;
+}
+.TaskModule .TaskModule_exit .dropdown {
+  position: relative;
+  display: block;
+  float: right;
+}
+.TaskModule .TaskModule_exit .invisible-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+.TaskModule .TaskModule_exit .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+  margin-left: -75px;
+}
+.TaskModule .TaskModule_exit .dropdown-content span {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4d4d4d;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.TaskModule .TaskModule_exit .dropdown-content span:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.TaskModule .TaskModule_exit .dropdown-content span.delete {
+  color: #FF220C;
+}
+.TaskModule .TaskModule_exit .show {
+  display: block;
 }
 .TaskModule .TaskModule_title {
   color: #4d4d4d;
@@ -412,7 +712,6 @@ nav.Nav .Nav_button svg {
   color: #959DA1;
   width: 88%;
   margin: 0 auto;
-  padding: 0 0 20px 0;
   cursor: pointer;
 }
 .TaskModule .TaskModule_descriptionTitle {
@@ -488,6 +787,39 @@ nav.Nav .Nav_button svg {
 .TaskModule .dz-preview {
   display: none;
 }
+.TaskModule input[type=date]::-webkit-clear-button {
+  display: none;
+}
+.TaskModule input[type=date]::-webkit-inner-spin-button {
+  display: none;
+}
+.TaskModule input[type=date]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+.TaskModule input[type=date] {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #959DA1;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px 0 0px 19px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+.TaskModule input[type=date].overDue {
+  background-color: #E7748D;
+  color: #fff;
+}
+.TaskModule input[type=date], .TaskModule focus {
+  color: #95a5a6;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
 
 .Overlay {
   display: flex;
@@ -511,6 +843,8 @@ nav.Nav .Nav_button svg {
   margin: 4% 0;
   padding: 0;
   overflow: hidden;
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
 }
 .LoginModule .LoginModule_exit {
   width: 100%;
@@ -560,6 +894,7 @@ nav.Nav .Nav_button svg {
   font-size: 15px;
   color: #838C91;
   text-decoration: underline;
+  cursor: pointer;
 }
 .LoginModule .LoginModule_buttons button {
   display: block;
@@ -575,37 +910,90 @@ nav.Nav .Nav_button svg {
   width: 250px;
   display: block;
 }
-.LoginModule .credentials .welcomeEmail {
+.LoginModule .welcomeEmail {
   display: block;
-  text-align: center;
+  position: relative;
+  padding-top: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Create a custom checkbox */
+  /* Create the checkmark/indicator (hidden when not checked) */
 }
-.LoginModule .credentials .welcomeEmail .checkbox {
+.LoginModule .welcomeEmail input {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+.LoginModule .welcomeEmail .checkmark {
+  position: relative;
+  top: 6px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  display: inline-block;
+  margin-right: 4px;
+}
+.LoginModule .welcomeEmail .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.LoginModule .welcomeEmail input:checked.checkmark:after {
+  display: block;
+}
+.LoginModule .welcomeEmail .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.LoginModule .welcomeEmail .emails_title {
+  display: block;
+  padding: 5px 0px 0px 4px;
+  text-align: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  color: #959DA1;
-  display: inline-block;
-  vertical-align: top;
-  padding-left: 25px;
-  position: relative;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #4d4d4d;
+  white-space: normal;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
 }
-.LoginModule .credentials .welcomeEmail .checkbox input {
-  position: absolute;
-  left: 0;
-  top: 0;
+.LoginModule .welcomeEmail:hover input.checkmark {
+  background-color: #ccc;
+}
+.LoginModule .welcomeEmail input:checked.checkmark {
+  background-color: #0079BF;
+}
+.LoginModule :focus {
+  outline: 0;
 }
 
-.Collection {
+.board {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
-.Collection .Collection_item {
+.board .board_item {
   display: block;
   position: relative;
   height: 85px;
@@ -616,14 +1004,14 @@ nav.Nav .Nav_button svg {
   width: 250px;
   background-color: #026AA7;
 }
-.Collection .Collection_item:hover {
+.board .board_item:hover {
   background-color: #055A8C;
 }
-.Collection .Collection_item:hover .Star {
+.board .board_item:hover .Star {
   right: 13px;
   visibility: visible;
 }
-.Collection .Collection_title {
+.board .board_title {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -631,7 +1019,7 @@ nav.Nav .Nav_button svg {
   margin: 0;
   padding: 0;
 }
-.Collection .Collection_addBoard {
+.board .board_addBoard {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -643,7 +1031,7 @@ nav.Nav .Nav_button svg {
   border-radius: 3px;
   background-color: #FFFFFF;
 }
-.Collection .Collection_options {
+.board .board_options {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -651,7 +1039,7 @@ nav.Nav .Nav_button svg {
   justify-content: flex-start;
   margin: 10px auto;
 }
-.Collection .Collection_newItem {
+.board .board_newItem {
   height: 85px;
   margin: 0 20px 20px 0;
   border-radius: 3px;
@@ -664,13 +1052,13 @@ nav.Nav .Nav_button svg {
   font-size: 15px;
   color: #4d4d4d;
 }
-.Collection .Collection_newItem:hover {
+.board .board_newItem:hover {
   background-color: #B6BBBF;
 }
-.Collection .Collection_newItem-active {
+.board .board_newItem-active {
   background-color: #CDD2D4 !important;
 }
-.Collection .Collection_newItem-active:hover {
+.board .board_newItem-active:hover {
   background-color: #CDD2D4 !important;
 }
 
@@ -692,13 +1080,13 @@ nav.Nav .Nav_button svg {
   stroke-width: 30;
 }
 
-.Board .Board_title {
+.boardDetail .boardDetail_title {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #FFFFFF;
   align-self: flex-start;
-  width: 261px;
+  width: 224px;
   margin: 0;
   padding: 2px 7px;
   outline: 0;
@@ -706,15 +1094,66 @@ nav.Nav .Nav_button svg {
   background-color: #0079BF;
   border-radius: 3px;
 }
-.Board .Board_title:focus {
+.boardDetail .boardDetail_title:focus {
   background-color: #FFFFFF !important;
   color: #4d4d4d !important;
 }
-.Board .Board_info {
+.boardDetail .boardDetail_info {
   width: 97%;
   margin: 2% auto 0 auto;
   height: auto;
   display: flex;
+}
+.boardDetail .boardDetail_info .options {
+  fill: #fff;
+  width: 21px;
+  height: 21px;
+  margin: 5px 8px 0 8px;
+  cursor: pointer;
+}
+.boardDetail .boardDetail_info .dropdown {
+  position: relative;
+  display: block;
+  float: right;
+}
+.boardDetail .boardDetail_info .invisible-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+.boardDetail .boardDetail_info .dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  margin-left: -88px;
+}
+.boardDetail .boardDetail_info .dropdown-content span {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4d4d4d;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.boardDetail .boardDetail_info .dropdown-content span:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.boardDetail .boardDetail_info .dropdown-content span.delete {
+  color: #FF220C;
+}
+.boardDetail .boardDetail_info .show {
+  display: block;
 }
 
 /*# sourceMappingURL=trello.css.map */

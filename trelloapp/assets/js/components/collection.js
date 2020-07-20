@@ -1,5 +1,4 @@
 const axios = require('axios');
-
 Vue.component('board-collection', {
   template: '#trello-board-collection',
   data: function() {
@@ -26,6 +25,12 @@ Vue.component('board-collection', {
       axios.post('/api/boards', { name: this.newBoardTitle }).then((r) => {  
         this.boards.push(r.data);
         this.$router.push(`/board/${r.data.id}`);
+      }).catch( () => {
+        this.$root.errorMessage.show = true;
+        this.$root.errorMessage.text = 'There was an error creating board';
+        setTimeout(() => {
+          this.$root.errorMessage.show = false;
+        }, 4000);
       });
       this.newBoardTitle = '';
     },
