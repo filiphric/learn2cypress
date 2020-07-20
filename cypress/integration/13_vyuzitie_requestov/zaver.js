@@ -17,7 +17,7 @@ beforeEach( () => {
 it('otvorenie novovytvoreneho boardu', () => {
 
   cy
-    .visit('/boards/' + Cypress.env('board')['id']);
+    .visit('/board/' + Cypress.env('board')['id']);
 
   cy
     .get('.board_item .board_title')

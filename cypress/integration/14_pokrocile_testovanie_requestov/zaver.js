@@ -81,7 +81,7 @@ describe('testovanie taskov pomocou lodash', () => {
 
         let taskNames = Cypress._.map(board.response.body.tasks, 'title')
 
-        expect(taskNames).to.have.members(tasks)
+        expect(taskNames).to.deep.eq(tasks)
 
       })
 

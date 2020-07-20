@@ -1,0 +1,6 @@
+it('typescript', () => {
+
+  cy
+    .visit('/')
+  
+});

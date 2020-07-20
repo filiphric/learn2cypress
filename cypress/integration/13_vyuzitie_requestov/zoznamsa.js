@@ -7,16 +7,25 @@ beforeEach( () => {
 
   cy
     .request('POST', '/api/boards', {
-      name: 'board vytvoreny cez api'
+      name: 'novy board'
     }).then( boards => {
       Cypress.env('board', boards.body )
     })
 
 })
 
-it('vytvorenie zoznamu v tasku novovytvoreneho boardu', () => {
+it('vytvorenie zoznamu novovytvorenom boarde', () => {
 
   cy
-    .visit('/boards/' + Cypress.env('board')['id']);
+    .request({
+      method: 'POST',
+      url: '/api/lists',
+      body: {
+        title: 'novy list'
+      }
+    })
+
+  cy
+    .visit('/board/' + Cypress.env('board')['id']);
     
 })

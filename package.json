@@ -6,13 +6,14 @@
   "scripts": {
     "cy:open": "cypress open",
     "start": "cd trelloapp && npm start",
-    "postinstall": "cd trelloapp && npm install",
-    "resetAll": "node ./trelloapp/tools/resetAll.js"
+    "postinstall": "cd trelloapp && npm install"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cypress", "e2e testing", "course"],
+  "author": "Filip Hric",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.10.0"
+    "@types/node": "^14.0.23",
+    "cypress": "^4.10.0",
+    "typescript": "^3.9.6"
   }
 }

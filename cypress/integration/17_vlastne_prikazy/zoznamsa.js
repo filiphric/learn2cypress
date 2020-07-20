@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-it('nastavovanie cookies', () => {
+it('prihlasenie pomocou custom commandu', () => {
 
   cy
     .visit('/')
-    
-})
+  
+});

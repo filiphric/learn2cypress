@@ -14,7 +14,6 @@ describe('testovanie casu pomocou momentjs', () => {
     cy
       .request('DELETE', '/api/tasks')
 
-    // ⚠️ dopln id boardu
     cy
       .visit('/board/')
 
@@ -34,7 +33,6 @@ describe('testovanie casu pomocou momentjs', () => {
       .wait('@createTask')
       .then( task => {
 
-        expect(task.response.body.created).to.eq(Cypress.moment().format('YYYY-MM-DD'))
 
       })
 

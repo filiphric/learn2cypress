@@ -15,11 +15,11 @@ describe('testovanie casu pomocou momentjs', () => {
       .request('DELETE', '/api/tasks')
 
     cy
-      .visit('/board/39290872571')
+      .visit('/board/17104542717')
 
   })
 
-  it('vytvoreny task obsahuje cas vytvorenia', () => {
+  it('vytvoreny task obsahuje datum vytvorenia', () => {
 
     cy
       .contains('Add a card...')
@@ -31,6 +31,9 @@ describe('testovanie casu pomocou momentjs', () => {
 
     cy
       .wait('@createTask')
+      .then( task => {
+        expect(task.response.body.created).to.eq(Cypress.moment().format('YYYY-MM-DD'))
+      })
 
   })
   
@@ -38,7 +41,7 @@ describe('testovanie casu pomocou momentjs', () => {
 
 const tasks = ['chlieb', 'mlieko', 'pivo', 'syr']
 
-describe('testovanie taskov pomocou lodash', () => {
+describe.only('testovanie taskov pomocou lodash', () => {
 
   beforeEach( () => {
 
@@ -57,14 +60,14 @@ describe('testovanie taskov pomocou lodash', () => {
       cy
         .request('POST', '/api/tasks', { 
           title: task, 
-          listId: 53986843421,
-          boardId: 39290872571
+          listId: 2779856862,
+          boardId: 17104542717
         })
 
     })
 
     cy
-      .visit('/board/39290872571')
+      .visit('/board/17104542717')
 
   })
 
@@ -72,6 +75,13 @@ describe('testovanie taskov pomocou lodash', () => {
 
     cy
       .wait('@boardDetails')
+      .then( board => {
+
+        let taskNames = Cypress._.map(board.response.body.tasks, 'title')
+
+        expect(taskNames).to.deep.eq(tasks)
+
+      })
 
   })
   

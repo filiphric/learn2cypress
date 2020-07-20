@@ -1,7 +1,8 @@
 {
   "baseUrl": "http://localhost:3000",
   "ignoreTestFiles": [
-    "**/*.md"
+    "**/*.md",
+    "tsconfig.json"
   ],
   "viewportWidth": 800,
   "viewportHeight": 600
