@@ -6,6 +6,5 @@
   ],
   "testFiles": "**/99_tests/*.ts",
   "viewportWidth": 800,
-  "viewportHeight": 600,
-  "projectId": "v94gfr"
+  "viewportHeight": 600
 }

@@ -1,22 +1,23 @@
-<!-- # Cypress automation for people in a hurry
-Repository for a course hosted on [Udemy on the topic of test automation in Cypress](https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D). The name of the course is a homage to [Neil DeGrasse Tyson’s book](https://www.amazon.com/Astrophysics-People-Hurry/dp/B06XB2PX7G) which I recommend you give a read.
+# Learn2code: Cypress
+Repozitár ku kurzu Learn2code na tému test automation pomocou Cypress.io
 
-## About author
-I’m Filip. I’m a QA lead at [Slido](https://www.sli.do/) and [Cypress.io ambassador](https://cypress.io/ambassadors/)
+## O autorovi
+Volám sa Filip. Som QA lead vo firme [Slido](https://www.sli.do/) a [Cypress ambasádor](https://cypress.io/ambassadors/)
 
-## What’s in here
-In this repo, you can find an application we are testing throughout the course as well as all the examples in video course. Each coding video chapter starts with `start.js` file, so you can follow along and code with me. The final state of the code can be found in `final.js` file. Some of the chapters contain `challenge.js` file too. As the name suggest, you can find additional examples and challenges to improve your Cypress skills.
+## Čo sa nachádza v repozitári
+Súčasťou repozitára je aplikácia a všetky učebné materiály ku kurzu. Väčšina kapitol kurzu začína súborom `zaciatok.js` alebo `zaciatok.ts`, ktoré je opísané vo videu. Počas videa môžeš písať kód spoločne so mnou. Konečný stav kódu je uložený v súbore `zaver.js` alebo `zaver.ts`. Väčšina kapitol taktiež obsahuje súbor `zoznamsa.js` alebo `zoznamsa.ts`, v ktorom je možné vyskúšať si koncepty popísané vo videu. Riešenie úloh je vždy popísané vo videu.
 
-## TodoMVC app
-Simple todoMVC app build with Vue.js, originally forked from [testing-workshop-cypress](https://github.com/cypress-io/testing-workshop-cypress). I expanded the application and added a couple of features.
+## Trello app
+Aplikácia je kópiou aplikácie Trello. V aplikácii možno vytvárať boardy a zoznamy úloh. Medzi boardami je možné úlohy presúvať meniť ich stav, nastaviť im deadline či dokonca uploadnúť obrázok.
 
-### How to install and run app
+### Inštalácia
+Inštalácia je jednoduchá, stačí zadať príkaz
 1. `npm install`
 2. `npm start`
-3. open app on http://localhost:3000
+3. A otvoriť aplikáciu v prehliadači na lokalite http://localhost:3000
 
 ### Backend
-Backend is a json-server on a static json file located in `todomvc/data.json`.  -->
+Backend je obyčajný json súbor, nachádzajúci sa v `trelloapp/public/data/data.json`. Uploadované súbory sa ukladajú do foldra `trelloapp/public/images`.
 
 ### API
 ---
