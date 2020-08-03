@@ -8,12 +8,17 @@
     "start": "cd trelloapp && npm start",
     "postinstall": "cd trelloapp && npm install"
   },
-  "keywords": ["cypress", "e2e testing", "course"],
+  "keywords": [
+    "cypress",
+    "e2e testing",
+    "course"
+  ],
   "author": "Filip Hric",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.0.23",
-    "cypress": "^4.10.0",
-    "typescript": "^3.9.6"
+    "cypress": "^4.11.0",
+    "typescript": "^3.9.6",
+    "update-json-file": "^1.1.1"
   }
 }
