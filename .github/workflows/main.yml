@@ -1,8 +1,14 @@
-name: End-to-end tests
+name: Parallel Cypress Tests
+
 on: [push]
+
 jobs:
-  cypress-run:
+  test:
+    name: Cypress run
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        machines: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -10,5 +16,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
+          record: true
+          parallel: true
+          group: 'Actions example'
           start: npm start
           wait-on: http://localhost:3000
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
