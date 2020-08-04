@@ -1,10 +1,11 @@
 {
   "name": "learn2cypress",
   "version": "1.0.0",
-  "description": "Online kurz o písaní automatizovaných testov pomocou cypress",
+  "description": "Online kurz o písaní automatizovaných testov pomocou Cypress",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open",
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run",
     "start": "cd trelloapp && npm start",
     "postinstall": "cd trelloapp && npm install"
   },

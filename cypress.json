@@ -4,7 +4,6 @@
     "**/*.md",
     "tsconfig.json"
   ],
-  "testFiles": "**/99_tests/*.ts",
   "viewportWidth": 800,
   "viewportHeight": 600,
   "projectId": "7f2gjh"
