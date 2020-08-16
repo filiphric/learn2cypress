@@ -3,15 +3,16 @@
 beforeEach( () => {
 
   cy
-    .visit('/board/25619573353');
+    .visit(); // doplň si adresu svojho boardu
 
 });
 
+// ⚠️ pred začiatkom testovania si prosím vytvor dva zoznamy
 // použi príkaz .contains()
 it('pridanie položky do druhého zoznamu', () => {
 
 })
 
-it.only('nastavenie timeoutu', () => {
+it('nastavenie timeoutu', () => {
 
 })

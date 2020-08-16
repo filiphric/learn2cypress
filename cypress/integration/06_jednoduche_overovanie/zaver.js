@@ -54,7 +54,6 @@ it('overenie zaskrtnutia', () => {
     .get('.Task input')
     .should('be.checked')
 
-
 })
 
 it('overenie názvu listu', () => {
@@ -62,5 +61,5 @@ it('overenie názvu listu', () => {
   cy
     .get('.boardDetail_title')
     .should('have.value', 'new board')
-  
+
 })
