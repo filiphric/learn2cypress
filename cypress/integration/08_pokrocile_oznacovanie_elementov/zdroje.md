@@ -1,0 +1,12 @@
+## Užitočné čítanie
+* [dokumentácia k príkazu .eq()](https://docs.cypress.io/api/commands/eq.html)
+* [dokumentácia k príkazu .prev()](https://docs.cypress.io/api/commands/prev.html)
+* [dokumentácia k príkazu .next()](https://docs.cypress.io/api/commands/next.html)
+* [dokumentácia k príkazu .first()](https://docs.cypress.io/api/commands/first.html)
+* [dokumentácia k príkazu .last()](https://docs.cypress.io/api/commands/last.html)
+* [dokumentácia k príkazu .filter()](https://docs.cypress.io/api/commands/filter.html)
+* [dokumentácia k príkazu .not()](https://docs.cypress.io/api/commands/not.html)
+* [dokumentácia k príkazu .children()](https://docs.cypress.io/api/commands/children.html)
+* [dokumentácia k príkazu .parents()](https://docs.cypress.io/api/commands/parents.html)
+* [W3 Schools dokumentácia k selectorom](https://www.w3schools.com/cssref/css_selectors.asp)
+* [Veľmi pekný diagram k vysvetleniu jednotlivých vzťahov medzi elementami](https://frontend30.com/css-selectors-cheatsheet/)
