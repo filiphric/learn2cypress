@@ -3,8 +3,12 @@
 it('vytvorenie boardu', () => {
 
   cy
-    .request('POST', '/api/boards', {
-      name: 'board vytvoreny cez api'
+    .request({
+      method: 'POST',
+      url: '/api/boards',
+      body: {
+        name: 'board vytvoreny cez api'
+      }
     })
 
   cy
@@ -12,7 +16,7 @@ it('vytvorenie boardu', () => {
 
 })
 
-describe('aplikacia v zresetovanom stave', () => {
+describe.only('aplikacia v zresetovanom stave', () => {
 
   beforeEach( () => {
 
@@ -33,7 +37,7 @@ describe('aplikacia v zresetovanom stave', () => {
     cy
       .get('.board_addBoard')
       .type('novy projekt{enter}')
-      
+
   })
 
 })
