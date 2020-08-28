@@ -3,7 +3,7 @@
 describe('testovanie casu pomocou momentjs', () => {
 
   beforeEach( () => {
-    
+
     cy
       .server()
 
@@ -31,17 +31,14 @@ describe('testovanie casu pomocou momentjs', () => {
 
     cy
       .wait('@createTask')
-      .then( task => {
-        expect(task.response.body.created).to.eq(Cypress.moment().format('YYYY-MM-DD'))
-      })
 
   })
-  
+
 })
 
 const tasks = ['chlieb', 'mlieko', 'pivo', 'syr']
 
-describe.only('testovanie taskov pomocou lodash', () => {
+describe('testovanie taskov pomocou lodash', () => {
 
   beforeEach( () => {
 
@@ -51,15 +48,15 @@ describe.only('testovanie taskov pomocou lodash', () => {
     cy
       .route('/api/boards/*')
       .as('boardDetails')
-    
+
     cy
       .request('DELETE', '/api/tasks')
-    
+
     tasks.forEach( task => {
 
       cy
-        .request('POST', '/api/tasks', { 
-          title: task, 
+        .request('POST', '/api/tasks', {
+          title: task,
           listId: 2779856862,
           boardId: 17104542717
         })
@@ -75,14 +72,7 @@ describe.only('testovanie taskov pomocou lodash', () => {
 
     cy
       .wait('@boardDetails')
-      .then( board => {
-
-        let taskNames = Cypress._.map(board.response.body.tasks, 'title')
-
-        expect(taskNames).to.deep.eq(tasks)
-
-      })
 
   })
-  
+
 })

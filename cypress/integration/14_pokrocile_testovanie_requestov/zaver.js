@@ -3,7 +3,7 @@
 describe('testovanie casu pomocou momentjs', () => {
 
   beforeEach( () => {
-    
+
     cy
       .server()
 
@@ -19,7 +19,7 @@ describe('testovanie casu pomocou momentjs', () => {
 
   })
 
-  it('vytvoreny task obsahuje cas vytvorenia', () => {
+  it('vytvoreny task obsahuje datum vytvorenia', () => {
 
     cy
       .contains('Add a card...')
@@ -38,7 +38,7 @@ describe('testovanie casu pomocou momentjs', () => {
       })
 
   })
-  
+
 })
 
 const tasks = ['chlieb', 'mlieko', 'pivo', 'syr']
@@ -53,15 +53,15 @@ describe('testovanie taskov pomocou lodash', () => {
     cy
       .route('/api/boards/*')
       .as('boardDetails')
-    
+
     cy
       .request('DELETE', '/api/tasks')
-    
+
     tasks.forEach( task => {
 
       cy
-        .request('POST', '/api/tasks', { 
-          title: task, 
+        .request('POST', '/api/tasks', {
+          title: task,
           listId: 53986843421,
           boardId: 39290872571
         })
@@ -86,5 +86,5 @@ describe('testovanie taskov pomocou lodash', () => {
       })
 
   })
-  
+
 })

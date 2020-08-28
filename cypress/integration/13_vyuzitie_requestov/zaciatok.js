@@ -7,11 +7,7 @@ beforeEach( () => {
 
   cy
     .request('POST', '/api/boards', {
-      name: 'novy board'
-    }).then( board => {
-
-      Cypress.env('board', board.body)
-
+      name: 'board vytvoreny cez api'
     })
 
 })
@@ -19,10 +15,6 @@ beforeEach( () => {
 it('otvorenie novovytvoreneho boardu', () => {
 
    cy
-    .visit('/board/' + Cypress.env('board')['id']);
-
-  cy
-    .get('.boardDetail_title')
-    .should('have.value', Cypress.env('board')['name'])
+    .visit('/')
 
 })

@@ -1,20 +1,20 @@
 it('drag and drop', () => {
 
   cy
-    .visit('/board/57843319424')
+    .visit('/board/5865296938')
 
   cy
     .get('.List_tasks')
     .eq(0)
-    .as('list1')
+    .as('todoList')
 
   cy
     .get('.List_tasks')
     .eq(1)
-    .as('list2')
+    .as('inprogressList')
 
   cy
     .get('.Task')
-    .drag('@list2')
-  
+    .drag('@inprogressList')
+
 });
