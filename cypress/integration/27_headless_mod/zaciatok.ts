@@ -35,9 +35,6 @@ it('vytvorenie boardu, zoznamu a tasku', () => {
     .should('be.visible')
 
   cy
-    .screenshot('meno')
-
-  cy
     .contains('Add a card...')
     .click()
 
@@ -47,6 +44,6 @@ it('vytvorenie boardu, zoznamu a tasku', () => {
 
   cy
     .get('.Task')
-    .should('have.length', 2)
+    .should('have.length', 1)
 
 })

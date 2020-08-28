@@ -6,3 +6,4 @@
 * [overenie deep.eq](https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions)
 * [cypress dokumentácia k moment.js](https://docs.cypress.io/api/utilities/moment.html)
 * [cypress dokumentácia k lodash](https://docs.cypress.io/api/utilities/_.html#Syntax)
+* [článok o JS príkaze forEach](https://dmitripavlutin.com/foreach-iterate-array-javascript/)
