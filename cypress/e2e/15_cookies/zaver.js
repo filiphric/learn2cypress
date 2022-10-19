@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
 Cypress.Cookies.defaults({
-  whitelist: 'trello_token'
+  preserve: 'trello_token'
 })
 
 it('nastavovanie cookies', () => {
 
   // cy
-  //   .setCookie('trello_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZpbGlwQGZpbGlwaHJpYy5zayIsImlhdCI6MTU5NDgxOTQ5NSwiZXhwIjoxNTk0ODIzMDk1LCJzdWIiOiIxIn0.rSl9pMkf_fnnQ6p1HjnwURya6sV9X9E4A4UwNjqaFYQ')
+  //   .setCookie('trello_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1a2FzQGx1a2FzLnNrIiwiaWF0IjoxNjY2MTgzMjI0LCJleHAiOjE2NjYxODY4MjQsInN1YiI6IjEifQ.j3ppBaNKNhB39b8kxccovFlM014q7LQvXI7wFpezAhQ')
 
   cy
     .visit('/')
