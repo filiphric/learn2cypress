@@ -38,7 +38,7 @@ it.only('create list',()=>{
 
 
    })
-
+})
 
     
 
@@ -47,30 +47,3 @@ it.only('create list',()=>{
 
 
 
-
-
-
-
-})
-
-
-it('following the http request',()=>{
-
-    
-
-
-
-
-
-})
-
-
-it('following the http request',()=>{
-
-    
-
-
-
-
-
-})

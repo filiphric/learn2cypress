@@ -1,6 +1,61 @@
 {
-  "boards": [],
-  "tasks": [],
-  "users": [],
-  "lists": []
+  "boards": [
+    {
+      "name": "newboard",
+      "user": 0,
+      "id": 13886828327,
+      "starred": false,
+      "created": "2022-10-19"
+    }
+  ],
+  "tasks": [
+    {
+      "boardId": 13886828327,
+      "description": "",
+      "completed": false,
+      "listId": 63122006192,
+      "title": "newtask",
+      "id": 52203788522,
+      "created": "2022-10-19",
+      "deadline": "2022-10-22",
+      "order": 0
+    },
+    {
+      "boardId": 13886828327,
+      "description": "",
+      "completed": false,
+      "listId": 63122006192,
+      "title": "newtask1",
+      "id": 35582681116,
+      "created": "2022-10-19",
+      "deadline": "2022-10-22",
+      "order": 1
+    },
+    {
+      "boardId": 13886828327,
+      "description": "",
+      "completed": true,
+      "listId": 63122006192,
+      "title": "newtask2",
+      "id": 51088146422,
+      "created": "2022-10-19",
+      "deadline": "2022-10-22",
+      "order": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "lukas@lukas.sk",
+      "password": "$2a$10$MHB2ZzIUzKxP8Q463khWSuGsx.WErLAasdMFZQW3jnDxFtcrcd52.",
+      "id": 1
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 13886828327,
+      "title": "newlist",
+      "id": 63122006192,
+      "created": "2022-10-19"
+    }
+  ]
 }

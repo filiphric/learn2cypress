@@ -2,6 +2,17 @@
 
 it('oznacovanie elementov', () => {
 
+
+
+ cy.visit('/')
+
+
+ cy.get('.background_title')
+ .contains('My Boards')
+cy.get('.board_title')
+cy.contains('novy board')
+
+
   /* 
 
   úloha #1: označ nadpis „My boards“ pomocou príkazu .get()
