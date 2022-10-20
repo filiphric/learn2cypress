@@ -3,52 +3,12 @@
     {
       "name": "newboard",
       "user": 0,
-      "id": 45051089223,
+      "id": 6374770071,
       "starred": false,
-      "created": "2022-10-19"
-    },
-    {
-      "name": "myboard",
-      "user": 1,
-      "id": 45022366896,
-      "starred": false,
-      "created": "2022-10-19"
+      "created": "2022-10-20"
     }
   ],
-  "tasks": [
-    {
-      "title": "chlieb",
-      "boardId": 45051089223,
-      "listId": 63727221515,
-      "id": 24438217504,
-      "created": "2022-10-19",
-      "deadline": "2022-10-22"
-    },
-    {
-      "title": "mlieko",
-      "boardId": 45051089223,
-      "listId": 63727221515,
-      "id": 87073663447,
-      "created": "2022-10-19",
-      "deadline": "2022-10-22"
-    },
-    {
-      "title": "pivo",
-      "boardId": 45051089223,
-      "listId": 63727221515,
-      "id": 38821487121,
-      "created": "2022-10-19",
-      "deadline": "2022-10-22"
-    },
-    {
-      "title": "syr",
-      "boardId": 45051089223,
-      "listId": 63727221515,
-      "id": 28325487467,
-      "created": "2022-10-19",
-      "deadline": "2022-10-22"
-    }
-  ],
+  "tasks": [],
   "users": [
     {
       "email": "lukas@lukas.sk",
@@ -59,9 +19,9 @@
   "lists": [
     {
       "title": "newlist",
-      "boardId": 45051089223,
-      "id": 63727221515,
-      "created": "2022-10-19"
+      "boardId": 6374770071,
+      "id": 22227747103,
+      "created": "2022-10-20"
     }
   ]
 }

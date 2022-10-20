@@ -1,9 +1,0 @@
-/// <reference types="cypress" />
-
-
-beforeEach(()=>{
-
-
-
-
-})
