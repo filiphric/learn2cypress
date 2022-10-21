@@ -1,41 +1,49 @@
 let retries = 0
-let maxRetries = 3
+let maxretries= 7
 
-Cypress.Commands.add('checkListLength', () => {
 
-  cy
-    .request({
-      method: 'GET',
-      url: '/boards/30828651503',
-      headers: {
-        accept: 'application/json, text/plain, */*'
-      }
-    }).then( board => {
 
-      if (board.body.lists.length === 4) {
-        return
-      } 
+Cypress.Commands.add('checklistlenght',()=>{
 
-      if (retries === maxRetries) {
-        throw new Error ('List never reached length of 4')
-      }
-      
-      cy
-        .wait(1000)
-        .checkListLength()
+cy.request({
+  
+  method:'GET', 
+  url:'/api/boards/*',
+  headers:{
+  
 
-      retries++
+    Accept: 'application/json, text/plain, */*',
 
-    })
+}}).then(board=>{
+
+  if (board.body.lists.lenght===4) 
+  
+  {
+return
+  } if (retries===maxretries)
+  {
+ throw new Error ('list lenght never reached four')
+
+}else
+{
+cy.wait(1000)
+cy.checklistlenght()
+retries++
+
+}
+
+
+
+})
 
 })
 
 it('štyri zoznamy', () => {
+  
 
-  cy
-    .visit('/board/40825871598')
+  cy.checklistlenght()
 
-  cy
-    .checkListLength()
+  
+  cy.visit('/board/42588298911')
 
 })

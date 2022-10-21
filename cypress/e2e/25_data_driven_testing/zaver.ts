@@ -1,31 +1,39 @@
+
 const lists = [
-  {
-    name: 'to do',
-    tasks: ['odpáliť raketu', 'pobaliť jedlo', 'tlačová správa']
-  },
-  {
-    name: 'in progress',
-    tasks: ['pripraviť astronautov', 'nastaviť odpočítavanie']
-  },
-  {
-    name: 'completed',
-    tasks: ['natankovať raketu']
-  }
-]
+{
+  names:'karol',
+  tasks:['1','2', '3'],
+},
 
-lists.forEach((list, index) => {
+{
+  names:'peter',
+  tasks:['1','2'],
+},
+{
+  names:'jano',
+  tasks:['1'],
+}]
 
-  it(`skontrolovať ${list.name} zoznam`, () => {
 
-    cy
-      .visit('/board/30828651503')
 
-    cy
-      .get('.List')
-      .eq(index)
-      .find('.Task')
-      .should('have.length', list.tasks.length)
+lists.forEach ((list, index)=> {
 
-  });
+
+
+
+
+
+
+it('skontrolovat${list, name}',()=>{
+
+
+  cy.visit('/board/42588298911')
+
+  cy.get('.List')
+  .eq(index)
+  .find('.Task')
+  .should('have.length', list.tasks.length) 
+})
+
 
 })
