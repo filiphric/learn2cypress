@@ -13,7 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2.3.4 # use the explicit version number
         with:
-         submodules: recursivegit pus
+         submodules: recursive
         
           start: npm start
           wait-on: http://localhost:3000
