@@ -3,7 +3,7 @@ import { defineConfig } from 'cypress'
 export default defineConfig({
   viewportWidth: 800,
   viewportHeight: 600,
-  projectId: '7f2gjh',
+  projectId: 'mfyf3r',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.

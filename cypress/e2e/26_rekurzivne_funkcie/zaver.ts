@@ -1,49 +1,57 @@
 let retries = 0
-let maxretries= 7
+let maxretries = 7
 
 
 
 Cypress.Commands.add('checklistlenght',()=>{
 
-cy.request({
+  cy.request({
+    method:'GET',
+    url:'/api/boards/*',
+    headers:{
+    
+      accept: 'application/json, text/plain, */*',
+    
+    
+    
+    }}).then(board=>{
+
+      if  (board.body.lists.lenght===4)
+      {
+
+        return
+      }
+
+        if (retries ===maxretries)
+
+        return
+    {
+      throw new Error ('never was created 4 lists')
+
+      } 
+
+      else 
+
+     {
+      cy.checklistlenght()
+
+         
+      }   
+    }})
+
+
   
-  method:'GET', 
-  url:'/api/boards/*',
-  headers:{
-  
+it('',()=>{
 
-    Accept: 'application/json, text/plain, */*',
 
-}}).then(board=>{
 
-  if (board.body.lists.lenght===4) 
-  
-  {
-return
-  } if (retries===maxretries)
-  {
- throw new Error ('list lenght never reached four')
 
-}else
-{
-cy.wait(1000)
+
 cy.checklistlenght()
-retries++
-
-}
 
 
-
-})
-
-})
-
-it('štyri zoznamy', () => {
-  
-
-  cy.checklistlenght()
-
-  
   cy.visit('/board/42588298911')
+
+
 
 })
