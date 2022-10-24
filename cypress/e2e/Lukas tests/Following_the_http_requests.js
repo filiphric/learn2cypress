@@ -11,7 +11,7 @@ beforeEach(()=>{
  .as('createList')
 
 
- cy.visit('/board/54620911285')
+ cy.visit('/board/85790153852')
 
 
 })

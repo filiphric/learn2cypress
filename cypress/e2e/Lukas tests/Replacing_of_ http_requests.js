@@ -3,8 +3,9 @@
 
 beforeEach(()=>{
 
-cy.visit('/')
 
+cy.server()
+cy.route('/api/boards', 'fx:fakeboards')
 
 
 })
@@ -12,11 +13,13 @@ cy.visit('/')
 
 
 
-    it.only('create list',()=>{
+
+
+    it.only('create fake board',()=>{
 
 
 
-
+        cy.visit('/')
 
 
 
