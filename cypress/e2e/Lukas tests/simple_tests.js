@@ -42,6 +42,7 @@ it('vytvaranie+oznacovanie',()=>{
 
     cy.get('[data-id="newTaskTitle"]')
     .type('newtask1{enter}')
+   
     //check task//
 
 

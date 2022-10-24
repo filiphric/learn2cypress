@@ -10,16 +10,27 @@ Cypress.Commands.add('addTask', (name) => {
 
 })
 
-Cypress.Commands.add('loginUser', (email, password) => {
+Cypress.Commands.add('loginUser',(email, password)=>{
 
-  cy
-    .request({
-      method: 'POST',
-      url: '/login',
-      body: { email, password }
-    }).then( res => {
-      cy
-        .setCookie('trello_token', res.body.accessToken)
-    })
 
-})
+
+  cy.request({
+  
+  method:'POST', 
+  url:'/login',
+  body:{
+  email:email,
+  password:password
+  
+  
+  
+  
+  }}).then(user=>{
+  cy.setCookie('trello_token', user.body.accessToken)
+  
+  
+  
+  })
+  
+  
+  })
