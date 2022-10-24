@@ -13,11 +13,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2.3.4 # use the explicit version number
         with:
-<<<<<<< HEAD
+
          
-=======
-         submodules: recursive
->>>>>>> e415fde (new tests)
+
         
           start: npm start
           wait-on: http://localhost:3000
