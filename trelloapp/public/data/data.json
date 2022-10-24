@@ -1,94 +1,32 @@
 {
   "boards": [
     {
-      "name": "nový board",
+      "name": "new",
       "user": 0,
-      "id": 42588298911,
+      "id": 85578437994,
       "starred": false,
-      "created": "2022-10-20"
+      "created": "2022-10-24"
     }
   ],
   "tasks": [
     {
-      "boardId": 42588298911,
+      "boardId": 85578437994,
       "description": "",
       "completed": false,
-      "listId": 40950516895,
-      "title": "1",
-      "id": 61863773964,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
-    },
-    {
-      "boardId": 42588298911,
-      "description": "",
-      "completed": false,
-      "listId": 40950516895,
-      "title": "2",
-      "id": 70238909862,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
-    },
-    {
-      "boardId": 42588298911,
-      "description": "",
-      "completed": false,
-      "listId": 40950516895,
-      "title": "3",
-      "id": 12285368001,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
-    },
-    {
-      "boardId": 42588298911,
-      "description": "",
-      "completed": false,
-      "listId": 48336383874,
-      "title": "1",
-      "id": 19971844915,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
-    },
-    {
-      "boardId": 42588298911,
-      "description": "",
-      "completed": false,
-      "listId": 48336383874,
-      "title": "2",
-      "id": 5699973526,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
-    },
-    {
-      "boardId": 42588298911,
-      "description": "",
-      "completed": false,
-      "listId": 50216429318,
-      "title": "1",
-      "id": 48617469930,
-      "created": "2022-10-20",
-      "deadline": "2022-10-23"
+      "listId": 786190245,
+      "title": "new task",
+      "id": 32562250030,
+      "created": "2022-10-24",
+      "deadline": "2022-10-27"
     }
   ],
   "users": [],
   "lists": [
     {
-      "boardId": 42588298911,
-      "title": "karol",
-      "id": 40950516895,
-      "created": "2022-10-20"
-    },
-    {
-      "boardId": 42588298911,
-      "title": "peter",
-      "id": 48336383874,
-      "created": "2022-10-20"
-    },
-    {
-      "boardId": 42588298911,
-      "title": "jano",
-      "id": 50216429318,
-      "created": "2022-10-20"
+      "boardId": 85578437994,
+      "title": "new list",
+      "id": 786190245,
+      "created": "2022-10-24"
     }
   ]
 }

@@ -1,5 +1,9 @@
+const { cyan } = require("color-name");
+
 it('otvorenie trello boardu', () => {
 
+
+  cy.visit('/')
   /* 
 
   úloha #1: vyskúšaj si otvorenie stránky pomocou príkazu .visit()
