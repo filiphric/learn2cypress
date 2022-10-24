@@ -1,9 +1,8 @@
 name: End-to-end tests
 on: [push]
 jobs:
-  cypress-run
+  cypress-run:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
