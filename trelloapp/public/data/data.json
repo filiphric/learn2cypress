@@ -1,32 +1,75 @@
 {
   "boards": [
     {
-      "name": "new",
+      "name": "new board",
       "user": 0,
-      "id": 85578437994,
+      "id": 47827911418,
       "starred": false,
-      "created": "2022-10-24"
+      "created": "2022-10-25"
+    },
+    {
+      "name": "privateboard",
+      "user": 1,
+      "id": 55376400581,
+      "starred": false,
+      "created": "2022-10-25"
     }
   ],
   "tasks": [
     {
-      "boardId": 85578437994,
-      "description": "",
-      "completed": false,
-      "listId": 786190245,
-      "title": "new task",
-      "id": 32562250030,
-      "created": "2022-10-24",
-      "deadline": "2022-10-27"
+      "title": "1",
+      "boardId": 47827911418,
+      "listId": 65241723501,
+      "id": 82417249394,
+      "created": "2022-10-25",
+      "deadline": "2022-10-28"
+    },
+    {
+      "title": "2",
+      "boardId": 47827911418,
+      "listId": 65241723501,
+      "id": 36251580784,
+      "created": "2022-10-25",
+      "deadline": "2022-10-28"
+    },
+    {
+      "title": "3",
+      "boardId": 47827911418,
+      "listId": 65241723501,
+      "id": 8359540031,
+      "created": "2022-10-25",
+      "deadline": "2022-10-28"
+    },
+    {
+      "title": "4",
+      "boardId": 47827911418,
+      "listId": 65241723501,
+      "id": 16405123854,
+      "created": "2022-10-25",
+      "deadline": "2022-10-28"
+    },
+    {
+      "title": "5",
+      "boardId": 47827911418,
+      "listId": 65241723501,
+      "id": 74385723186,
+      "created": "2022-10-25",
+      "deadline": "2022-10-28"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "email": "lukas@lukas.sk",
+      "password": "$2a$10$jhZWsl26OLrZlvvC4qcZZ.bf61la37PcAGDMJG5ZjfOjUPYcZwfC6",
+      "id": 1
+    }
+  ],
   "lists": [
     {
-      "boardId": 85578437994,
-      "title": "new list",
-      "id": 786190245,
-      "created": "2022-10-24"
+      "title": "listocek",
+      "boardId": 47827911418,
+      "id": 65241723501,
+      "created": "2022-10-25"
     }
   ]
 }
