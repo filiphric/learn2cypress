@@ -1,67 +1,33 @@
 {
   "boards": [
     {
-      "name": "new board",
+      "name": "newboard",
       "user": 0,
-      "id": 47827911418,
-      "starred": false,
-      "created": "2022-10-25"
-    },
-    {
-      "name": "privateboard",
-      "user": 1,
-      "id": 55376400581,
-      "starred": false,
-      "created": "2022-10-25"
-    },
-    {
-      "name": "new board",
-      "user": 0,
-      "id": 17290752709,
+      "id": 59710642891,
       "starred": false,
       "created": "2022-10-26"
     }
   ],
   "tasks": [
     {
-      "title": "1",
-      "boardId": 47827911418,
-      "listId": 65241723501,
-      "id": 82417249394,
-      "created": "2022-10-25",
-      "deadline": "2022-10-28"
+      "boardId": 59710642891,
+      "description": "",
+      "completed": true,
+      "listId": 69132513350,
+      "title": "newtask",
+      "id": 58147317212,
+      "created": "2022-10-26",
+      "deadline": "2022-10-29"
     },
     {
-      "title": "2",
-      "boardId": 47827911418,
-      "listId": 65241723501,
-      "id": 36251580784,
-      "created": "2022-10-25",
-      "deadline": "2022-10-28"
-    },
-    {
-      "title": "3",
-      "boardId": 47827911418,
-      "listId": 65241723501,
-      "id": 8359540031,
-      "created": "2022-10-25",
-      "deadline": "2022-10-28"
-    },
-    {
-      "title": "4",
-      "boardId": 47827911418,
-      "listId": 65241723501,
-      "id": 16405123854,
-      "created": "2022-10-25",
-      "deadline": "2022-10-28"
-    },
-    {
-      "title": "5",
-      "boardId": 47827911418,
-      "listId": 65241723501,
-      "id": 74385723186,
-      "created": "2022-10-25",
-      "deadline": "2022-10-28"
+      "boardId": 59710642891,
+      "description": "",
+      "completed": false,
+      "listId": 69132513350,
+      "title": "newtask1",
+      "id": 48417262045,
+      "created": "2022-10-26",
+      "deadline": "2022-10-29"
     }
   ],
   "users": [
@@ -73,10 +39,10 @@
   ],
   "lists": [
     {
-      "title": "listocek",
-      "boardId": 47827911418,
-      "id": 65241723501,
-      "created": "2022-10-25"
+      "boardId": 59710642891,
+      "title": "newlist",
+      "id": 69132513350,
+      "created": "2022-10-26"
     }
   ]
 }
