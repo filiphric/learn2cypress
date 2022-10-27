@@ -5,7 +5,7 @@
       "user": 0,
       "id": 59710642891,
       "starred": false,
-      "created": "2022-10-26"
+
     }
   ],
   "tasks": [
@@ -23,26 +23,11 @@
       "boardId": 59710642891,
       "description": "",
       "completed": false,
-      "listId": 69132513350,
-      "title": "newtask1",
-      "id": 48417262045,
-      "created": "2022-10-26",
-      "deadline": "2022-10-29"
-    }
-  ],
-  "users": [
-    {
-      "email": "lukas@lukas.sk",
-      "password": "$2a$10$jhZWsl26OLrZlvvC4qcZZ.bf61la37PcAGDMJG5ZjfOjUPYcZwfC6",
-      "id": 1
+
     }
   ],
   "lists": [
-    {
-      "boardId": 59710642891,
-      "title": "newlist",
-      "id": 69132513350,
-      "created": "2022-10-26"
+
     }
   ]
 }
