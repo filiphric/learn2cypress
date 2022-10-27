@@ -17,6 +17,7 @@
   "author": "Filip Hric",
   "license": "ISC",
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.1",
     "@types/node": "^14.0.23",
     "cypress": "^10.10.0",
     "typescript": "^3.9.6",
