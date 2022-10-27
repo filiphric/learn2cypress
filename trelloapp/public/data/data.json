@@ -1,62 +1,33 @@
 {
   "boards": [
     {
-      "name": "new",
+      "name": "newboard",
       "user": 0,
-      "id": 85578437994,
+      "id": 59710642891,
       "starred": false,
-      "created": "2022-10-24"
-    },
-    {
-      "name": "test",
-      "user": 0,
-      "id": 56410438668,
-      "starred": false,
-      "created": "2022-10-27"
+
     }
   ],
   "tasks": [
     {
-      "boardId": 85578437994,
+      "boardId": 59710642891,
       "description": "",
-      "completed": false,
-      "listId": 786190245,
-      "title": "new task",
-      "id": 32562250030,
-      "created": "2022-10-24",
-      "deadline": "2022-10-27"
+      "completed": true,
+      "listId": 69132513350,
+      "title": "newtask",
+      "id": 58147317212,
+      "created": "2022-10-26",
+      "deadline": "2022-10-29"
     },
     {
-      "boardId": 56410438668,
+      "boardId": 59710642891,
       "description": "",
       "completed": false,
-      "listId": 82130821109,
-      "title": "dragable",
-      "id": 71530386125,
-      "created": "2022-10-27",
-      "deadline": "2022-10-30",
-      "order": 0
+
     }
   ],
-  "users": [],
   "lists": [
-    {
-      "boardId": 85578437994,
-      "title": "new list",
-      "id": 786190245,
-      "created": "2022-10-24"
-    },
-    {
-      "boardId": 56410438668,
-      "title": "first",
-      "id": 7045941853,
-      "created": "2022-10-27"
-    },
-    {
-      "boardId": 56410438668,
-      "title": "second",
-      "id": 82130821109,
-      "created": "2022-10-27"
+
     }
   ]
 }
